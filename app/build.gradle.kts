@@ -47,9 +47,11 @@ android {
 }
 
 dependencies {
-    //Coil
+    implementation (libs.accompanist.coil)
     // Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.compose.v250) // For Jetpack Compose
+    implementation(libs.coil.svg)
     //Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)

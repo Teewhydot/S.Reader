@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-public val Splash1: ImageVector
+val Splash1: ImageVector
 	get() {
 		if (_Splash1 != null) {
 			return _Splash1!!

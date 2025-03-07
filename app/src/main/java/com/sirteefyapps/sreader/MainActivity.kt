@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.sirteefyapps.sreader.features.auth.presentation.activity.LoginScreen
 import com.sirteefyapps.sreader.navigation.SReaderNavigation
 import com.sirteefyapps.sreader.ui.theme.SReaderTheme
 
@@ -33,7 +34,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SReaderApp(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
-    SReaderNavigation(
-        navController = navController
-    )
+//    SReaderNavigation(
+//        navController = navController
+//    )
+    LoginScreen()
 }
