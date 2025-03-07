@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "407832768807",
+    "project_id": "sreader-abf36",
+    "storage_bucket": "sreader-abf36.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407832768807:android:eaff4286bb0850ecdaf902",
+        "android_client_info": {
+          "package_name": "com.sirteefyapps.sreader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrad1P7SuQojKw5NMYaM6xyGE3i_Yuh7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

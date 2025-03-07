@@ -2,6 +2,13 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.seriazliation)
+    id ("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
+    //Firebase
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -40,6 +47,42 @@ android {
 }
 
 dependencies {
+    //Coil
+    // Coil
+    implementation(libs.coil.compose)
+    //Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    //retrofit
+    implementation(libs.retrofit)
+
+    // Gson
+    implementation(libs.gson)
+    implementation (libs.converter.gson)
+
+    implementation (libs.ktor.client.core)
+    implementation (libs.ktor.client.cio)
+    implementation (libs.ktor.client.android)
+    implementation (libs.ktor.client.serialization)
+    implementation (libs.ktor.client.logging)
+    // Ktor JSON Serialization
+    implementation (libs.ktor.client.content.negotiation)
+    implementation (libs.ktor.serialization.kotlinx.json)
+    // Kotlinx Serialization
+    implementation (libs.kotlinx.serialization.json)
+    // View model dependency
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation (libs.androidx.hilt.navigation.compose)
+    // Navigation (Needed to use the latest navigation compose update)
+    implementation(libs.androidx.navigation.compose)
+
+    // Hilt Dagger
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
