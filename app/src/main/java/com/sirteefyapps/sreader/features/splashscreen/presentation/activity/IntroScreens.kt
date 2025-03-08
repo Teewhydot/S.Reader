@@ -4,6 +4,7 @@ import Splash1
 import Splash2
 import android.widget.Space
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -112,7 +113,7 @@ fun IntroScreen() {
            }
        }
 
-            IndicatorComposable(
+       if(pagerState.currentPage!=2)  IndicatorComposable(
                 activeIndex = pagerState.currentPage
             )
         }
@@ -226,7 +227,9 @@ fun ThirdPagerScreen(){
                 modifier = Modifier.height(20.dp)
             )
             Surface(
-                modifier = Modifier.width(230.dp).height(50.dp),
+                modifier = Modifier.width(230.dp).height(50.dp).clickable {
+
+                },
                 color = ButtonColor,
                 shape = RoundedCornerShape(10.dp)
             ) {

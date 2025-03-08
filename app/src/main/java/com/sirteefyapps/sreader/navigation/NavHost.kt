@@ -1,5 +1,6 @@
 package com.sirteefyapps.sreader.navigation
 
+import LoginScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -12,12 +13,18 @@ import kotlinx.serialization.Serializable
 fun SReaderNavigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = SReaderScreens.SplashScreen
+        startDestination = SReaderScreens.Splash
     ) {
-        composable<SReaderScreens.SplashScreen> {
+        composable<SReaderScreens.Splash> {
             SReaderSplash()
         }
-        composable<SReaderScreens.IntroScreen> {
+        composable<SReaderScreens.Intro> {
+            IntroScreen()
+        }
+        composable<SReaderScreens.Login> {
+            LoginScreen()
+        }
+        composable<SReaderScreens.Register> {
             IntroScreen()
         }
     }
@@ -27,27 +34,27 @@ fun SReaderNavigation(navController: NavHostController) {
 object SReaderScreens {
 
     @Serializable
-    object  IntroScreen
+    object  Intro
 
     @Serializable
-    object SplashScreen
+    object Splash
 
     @Serializable
-    object LoginScreen
+    object Login
 
     @Serializable
-    object HomeScreen
+    object Home
 
     @Serializable
-    object RegisterScreen
+    object Register
 
     @Serializable
-    object ProfileScreen
+    object Profile
 
     @Serializable
-    object SettingsScreen
+    object Settings
 
 
     @Serializable
-    object BookDetailsScreen
+    object BookDetails
 }
