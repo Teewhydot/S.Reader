@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -17,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.sirteefyapps.sreader.features.splashscreen.presentation.component.ButtonComposable
+import com.sirteefyapps.sreader.ui.theme.ButtonColor
 import com.sirteefyapps.sreader.ui.theme.SplashBg
 
 @Preview
@@ -30,7 +34,7 @@ fun LoginScreen() {
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
@@ -42,7 +46,9 @@ fun LoginScreen() {
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-            Surface() {
+            Surface(
+                shape = RoundedCornerShape(10.dp)
+            ) {
                         TextField(
                             value = "",
                             onValueChange = {},
@@ -61,6 +67,11 @@ fun LoginScreen() {
             }
             Spacer(
                 modifier = Modifier.height(20.dp)
+            )
+            ButtonComposable(
+                buttonText = "Login",
+                onClick = {},
+                modifier = Modifier.align(Alignment.CenterHorizontally) .padding(10.dp)
             )
         }
     }

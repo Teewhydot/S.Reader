@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.sirteefyapps.sreader.ui.theme.ButtonColor
 
 
@@ -31,7 +32,8 @@ fun ButtonComposable(modifier: Modifier, buttonText: String, onClick: () -> Unit
             text = buttonText,
             modifier = modifier,
             style = MaterialTheme.typography.headlineSmall.copy(
-                color = Color.White
+                color = Color.White,
+                fontSize = 16.sp
             ),
             textAlign = TextAlign.Center,
         )
