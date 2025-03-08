@@ -1,4 +1,5 @@
 import android.graphics.Paint.Align
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.sirteefyapps.sreader.features.splashscreen.presentation.component.ButtonComposable
 import com.sirteefyapps.sreader.ui.theme.ButtonColor
 import com.sirteefyapps.sreader.ui.theme.SplashBg
+import com.sirteefyapps.sreader.ui.theme.buttonTextStyle
 
 @Preview
 @Composable
@@ -37,6 +41,9 @@ fun LoginScreen() {
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            Spacer(
+                modifier = Modifier.height(50.dp)
+            )
             Text(
                 text = "Login",
                 style = MaterialTheme.typography.headlineSmall.copy(
@@ -44,7 +51,7 @@ fun LoginScreen() {
                 )
             )
             Spacer(
-                modifier = Modifier.height(20.dp)
+                modifier = Modifier.height(50.dp)
             )
             Surface(
                 shape = RoundedCornerShape(10.dp)
@@ -56,9 +63,12 @@ fun LoginScreen() {
                         )
             }
             Spacer(
-                modifier = Modifier.height(10.dp)
+                modifier = Modifier.height(25.dp)
             )
-            Surface() {
+            Surface(
+                shape = RoundedCornerShape(10.dp)
+
+            ) {
                 TextField(
                     value = "",
                     onValueChange = {},
@@ -66,13 +76,34 @@ fun LoginScreen() {
                 )
             }
             Spacer(
-                modifier = Modifier.height(20.dp)
+                modifier = Modifier.height(50.dp)
             )
             ButtonComposable(
                 buttonText = "Login",
                 onClick = {},
-                modifier = Modifier.align(Alignment.CenterHorizontally) .padding(10.dp)
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
+            Spacer(
+                modifier = Modifier.height(20.dp)
+            )
+            ElevatedButton(onClick = {},
+                border = BorderStroke(
+                    width = 1.dp,
+                    color = Color.White
+                ),
+                colors = ButtonColors(
+                containerColor = SplashBg,
+                contentColor = Color.White,
+                disabledContainerColor = SplashBg,
+                disabledContentColor = SplashBg,
+            )
+            ) {
+                Text(
+                    text = "Go Back",
+                    style = buttonTextStyle
+                )
+            }
+
         }
     }
 }
