@@ -49,6 +49,9 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import com.sirteefyapps.sreader.R
+import com.sirteefyapps.sreader.features.splashscreen.presentation.component.ButtonComposable
+import com.sirteefyapps.sreader.features.splashscreen.presentation.component.IndicatorComposable
+import com.sirteefyapps.sreader.features.splashscreen.presentation.component.PagerScreen
 import com.sirteefyapps.sreader.ui.theme.ButtonColor
 import com.sirteefyapps.sreader.ui.theme.SplashBg
 
@@ -65,55 +68,56 @@ fun IntroScreen() {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.SpaceBetween
 
-            ) {
-       Column {
-           Row(
-               horizontalArrangement = Arrangement.SpaceBetween,
-               verticalAlignment = Alignment.CenterVertically,
-               modifier = Modifier
-                   .fillMaxWidth()
-                   .padding(10.dp)
-           ) {
-               Icon(
-                   imageVector = Icons.Default.ArrowBack,
-                   contentDescription = null,
-                   tint = Color.White
-               )
-               Text(
-                   text = "Skip",
-                   color = Color.White
-               )
-           }
-           HorizontalPager(
-               count = 3,
-               state = pagerState,
-               verticalAlignment = Alignment.CenterVertically,
-               userScrollEnabled = true,
-           ) {
-               page ->
-               when (page) {
-                   0 ->{
-                       PagerScreen(
-                           boldText = "Only Books Can Help You",
-                           description = "Books can help you increase your knowledge, and make you smarter",
-                           svgImage = Splash1
-                       )
-                   }
-                   1 -> {
-                       PagerScreen(
-                           boldText = "Learn Smartly",
-                           description = "It’s 2022 and it’s time to learn every quickly and smartly. All books are storage in cloud and you can access all of them from your laptop or PC. ",
-                           svgImage = Splash2
-                       )
-                   }
-                   2 -> {
-                       ThirdPagerScreen()
-                   }
-               }
-           }
-       }
+        ) {
+            Column {
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null,
+                        tint = Color.White
+                    )
+                    Text(
+                        text = "Skip",
+                        color = Color.White
+                    )
+                }
+                HorizontalPager(
+                    count = 3,
+                    state = pagerState,
+                    verticalAlignment = Alignment.CenterVertically,
+                    userScrollEnabled = true,
+                ) { page ->
+                    when (page) {
+                        0 -> {
+                            PagerScreen(
+                                boldText = "Only Books Can Help You",
+                                description = "Books can help you increase your knowledge, and make you smarter",
+                                svgImage = Splash1
+                            )
+                        }
 
-       if(pagerState.currentPage!=2)  IndicatorComposable(
+                        1 -> {
+                            PagerScreen(
+                                boldText = "Learn Smartly",
+                                description = "It’s 2022 and it’s time to learn every quickly and smartly. All books are storage in cloud and you can access all of them from your laptop or PC. ",
+                                svgImage = Splash2
+                            )
+                        }
+
+                        2 -> {
+                            ThirdPagerScreen()
+                        }
+                    }
+                }
+            }
+
+            if (pagerState.currentPage != 2) IndicatorComposable(
                 activeIndex = pagerState.currentPage
             )
         }
@@ -121,7 +125,7 @@ fun IntroScreen() {
 }
 
 @Composable
-fun ThirdPagerScreen(){
+fun ThirdPagerScreen() {
     val configuration = LocalConfiguration.current
     val screenHeight = configuration.screenHeightDp
     Surface(
@@ -141,61 +145,89 @@ fun ThirdPagerScreen(){
             Surface(
                 modifier = Modifier.height(screenHeight.dp * 0.6f), color = SplashBg
             ) {
-               Box(
-                   modifier = Modifier.fillMaxSize().clipToBounds()
-               ){
-                     Image(
-                          painter = painterResource(id = R.drawable.rdpd2by3),
-                          contentDescription = null,
-                          contentScale = ContentScale.FillBounds,
-                          modifier = Modifier.height(230.dp).width(150.dp).offset(x = (20).dp, y = 70.dp),
-                     )
-                   Image(
-                       painter = painterResource(id = R.drawable.ic_launcher_background),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(150.dp).width(150.dp).offset(x = (20).dp, y = 350.dp).clip(
-                           CircleShape),
-                   )
-                   Image(
-                       painter = painterResource(id = R.drawable.ic_launcher_foreground),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(150.dp).width(150.dp).offset(x = (20).dp, y = 300.dp),
-                   )
-                   Image(
-                       painter = painterResource(id = R.drawable.ikigai3by5),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(230.dp).width(150.dp).offset(x = (150).dp, y = 10.dp),
-                   )
-                   Image(
-                       painter = painterResource(id = R.drawable.hundred_startup3by5),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(230.dp).width(150.dp).offset(x = (150).dp, y = 180.dp),
-                   )
-                   Image(
-                       painter = painterResource(id = R.drawable.slaa3by5),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(230.dp).width(150.dp).offset(x = (150).dp, y = 350.dp),
-                   )
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clipToBounds()
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.rdpd2by3),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (20).dp, y = 70.dp),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_launcher_background),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(150.dp)
+                            .width(150.dp)
+                            .offset(x = (20).dp, y = 350.dp)
+                            .clip(
+                                CircleShape
+                            ),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(150.dp)
+                            .width(150.dp)
+                            .offset(x = (20).dp, y = 300.dp),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.ikigai3by5),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (150).dp, y = 10.dp),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.hundred_startup3by5),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (150).dp, y = 180.dp),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.slaa3by5),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (150).dp, y = 350.dp),
+                    )
 
-                   Image(
-                       painter = painterResource(id = R.drawable.the_alchemist3by5),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(230.dp).width(150.dp).offset(x = (270).dp, y = 180.dp),
-                   )
-                   Image(
-                       painter = painterResource(id = R.drawable.seven_habits3by5),
-                       contentDescription = null,
-                       contentScale = ContentScale.FillBounds,
-                       modifier = Modifier.height(230.dp).width(150.dp).offset(x = (270).dp, y = 0.dp),
-                   )
+                    Image(
+                        painter = painterResource(id = R.drawable.the_alchemist3by5),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (270).dp, y = 180.dp),
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.seven_habits3by5),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillBounds,
+                        modifier = Modifier
+                            .height(230.dp)
+                            .width(150.dp)
+                            .offset(x = (270).dp, y = 0.dp),
+                    )
 
-               }
+                }
             }
             Spacer(
                 modifier = Modifier.height(10.dp)
@@ -226,106 +258,14 @@ fun ThirdPagerScreen(){
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-            Surface(
-                modifier = Modifier.width(230.dp).height(50.dp).clickable {
-
-                },
-                color = ButtonColor,
-                shape = RoundedCornerShape(10.dp)
-            ) {
-                Text(
-                    text = "Next",
-                    modifier = Modifier.padding(10.dp).align(Alignment.CenterHorizontally),
-                    style = MaterialTheme.typography.headlineSmall.copy(
-                        color = Color.White
-                    ),
-                    textAlign = TextAlign.Center,
-                    )
-            }
-
-        }
-    }
-}
-@Composable
-fun PagerScreen(svgImage: ImageVector, boldText: String, description: String) {
-    val configuration = LocalConfiguration.current
-    val screenHeight = configuration.screenHeightDp
-    Surface(
-        color = SplashBg,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Column(
-            modifier = Modifier
-                .windowInsetsPadding(WindowInsets.safeDrawing)
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-            Spacer(
-                modifier = Modifier.height(20.dp)
-            )
-            Surface(
-                modifier = Modifier.height(screenHeight.dp * 0.5f), color = SplashBg
-            ) {
-               Image(
-                     imageVector = svgImage,
-                     contentDescription = null,
-                     contentScale = ContentScale.FillBounds,
-                     modifier = Modifier.fillMaxSize(),
-               )
-            }
-            Spacer(
-                modifier = Modifier.height(20.dp)
-            )
-            Text(
-                text = boldText,
-                style = MaterialTheme.typography.headlineSmall,
-                color = Color.White,
+            ButtonComposable(
                 modifier = Modifier
-                    .padding(5.dp)
-                    .align(Alignment.CenterHorizontally)
-            )
-            Text(
-                text = description,
-                style = MaterialTheme.typography.headlineSmall.copy(
-                    fontSize = 12.sp,
-                    lineHeight = 15.sp
-
-                ),
-                color = Color.Gray,
-                modifier = Modifier
-                    .padding(
-                        horizontal = 40.dp,
-                    )
-                    .align(Alignment.CenterHorizontally)
+                    .padding(10.dp)
+                    .align(Alignment.CenterHorizontally),
+                buttonText = "Next",
+                onClick = {}
             )
 
         }
-    }
-}
-
-
-@Composable
-fun IndicatorComposable(activeIndex: Int) {
-    Row {
-        for (i in 0..2) {
-            Spacer(modifier = Modifier.width(10.dp).padding(10.dp))
-            IndicatorItemComposable(active = i == activeIndex)
-        }
-    }
-}
-
-@Composable
-fun IndicatorItemComposable(active: Boolean) {
-    Surface(
-        modifier = Modifier
-            .width(
-                if (active) 30.dp else 10.dp
-            )
-            .height(10.dp),
-        shape = RoundedCornerShape(10.dp),
-        color = if (active) Color.Green else Color.Gray
-    ) {
-
     }
 }
