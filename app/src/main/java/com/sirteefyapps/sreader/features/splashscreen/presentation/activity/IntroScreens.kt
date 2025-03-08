@@ -46,7 +46,6 @@ import com.sirteefyapps.sreader.features.splashscreen.presentation.component.Pag
 import com.sirteefyapps.sreader.ui.theme.SplashBg
 
 @OptIn(ExperimentalPagerApi::class)
-@Preview
 @Composable
 fun IntroScreen() {
 
@@ -114,6 +113,8 @@ fun IntroScreen() {
     }
 }
 
+
+@Preview
 @Composable
 fun ThirdPagerScreen() {
     val configuration = LocalConfiguration.current
@@ -248,14 +249,28 @@ fun ThirdPagerScreen() {
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-            ButtonComposable(
-                modifier = Modifier
-                    .padding(10.dp)
-                    .align(Alignment.CenterHorizontally),
-                buttonText = "Next",
-                onClick = {}
-            )
+            Row(
+                modifier = Modifier.padding(horizontal = 20.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                ButtonComposable(
+                    modifier = Modifier
+                        .padding(10.dp).weight(0.5f),
+                    buttonText = "Register",
+                    onClick = {}
+                )
+                Spacer(
+                    modifier = Modifier.width(10.dp)
+                )
+                ButtonComposable(
+                    modifier = Modifier
+                        .padding(10.dp).weight(0.5f),
+                    buttonText = "Login",
+                    onClick = {}
+                )
 
+            }
         }
     }
 }
