@@ -83,6 +83,7 @@ fun RegisterScreen() {
             ButtonComposable(
                 buttonText = "Register",
                 onClick = {},
+                buttonColor = ButtonColor,
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
             Spacer(

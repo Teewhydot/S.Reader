@@ -11,28 +11,29 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import com.sirteefyapps.sreader.ui.theme.ButtonColor
 import com.sirteefyapps.sreader.ui.theme.buttonTextStyle
 
 
 @Composable
-fun ButtonComposable(modifier: Modifier, buttonText: String, onClick: () -> Unit) {
+fun ButtonComposable(modifier: Modifier,buttonColor:Color,height: Int? = 50,width: Int? = 230,buttonStyle: TextStyle = TextStyle(), buttonText: String, onClick: () -> Unit) {
     Surface(
         modifier = modifier
-            .width(230.dp)
-            .height(50.dp)
+            .width(width?.dp ?: 230.dp)
+            .height(height?.dp ?: 50.dp)
             .clickable {
                 onClick()
             },
-        color = ButtonColor,
+        color = buttonColor,
         shape = RoundedCornerShape(10.dp)
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = buttonText, style = buttonTextStyle)
+            Text(text = buttonText, style = buttonStyle)
         }
     }
 }

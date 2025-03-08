@@ -11,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.sirteefyapps.sreader.features.home_screen.presentation.activity.HomeScreen
 import com.sirteefyapps.sreader.features.splashscreen.presentation.activity.IntroScreen
 import com.sirteefyapps.sreader.ui.theme.SReaderTheme
 
@@ -36,5 +37,5 @@ fun SReaderApp(modifier: Modifier = Modifier) {
 //    SReaderNavigation(
 //        navController = navController
 //    )
-    LoginScreen()
+    HomeScreen()
 }

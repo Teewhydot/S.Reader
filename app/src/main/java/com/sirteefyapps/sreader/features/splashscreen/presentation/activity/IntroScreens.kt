@@ -43,6 +43,9 @@ import com.sirteefyapps.sreader.R
 import com.sirteefyapps.sreader.features.splashscreen.presentation.component.ButtonComposable
 import com.sirteefyapps.sreader.features.splashscreen.presentation.component.IndicatorComposable
 import com.sirteefyapps.sreader.features.splashscreen.presentation.component.PagerScreen
+import com.sirteefyapps.sreader.ui.theme.ButtonColor
+import com.sirteefyapps.sreader.ui.theme.Purple80
+import com.sirteefyapps.sreader.ui.theme.PurpleGrey40
 import com.sirteefyapps.sreader.ui.theme.SplashBg
 
 @OptIn(ExperimentalPagerApi::class)
@@ -258,7 +261,8 @@ fun ThirdPagerScreen() {
                     modifier = Modifier
                         .padding(10.dp).weight(0.5f),
                     buttonText = "Register",
-                    onClick = {}
+                    onClick = {},
+                    buttonColor = ButtonColor
                 )
                 Spacer(
                     modifier = Modifier.width(10.dp)
@@ -267,7 +271,8 @@ fun ThirdPagerScreen() {
                     modifier = Modifier
                         .padding(10.dp).weight(0.5f),
                     buttonText = "Login",
-                    onClick = {}
+                    onClick = {},
+                    buttonColor = PurpleGrey40
                 )
 
             }

@@ -22,8 +22,18 @@ val Typography = Typography(
 val buttonTextStyle = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Normal,
-    fontSize = 16.sp,
-    lineHeight = 24.sp,
+    fontSize = 14.sp,
+    lineHeight = 14.sp,
     letterSpacing = 0.5.sp,
+    color = Color.White
+)
+
+
+val headerTextStyle = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    fontSize = 24.sp,
+    lineHeight = 32.sp,
+    letterSpacing = 0.15.sp,
     color = Color.White
 )

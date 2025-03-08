@@ -81,7 +81,8 @@ fun LoginScreen() {
             ButtonComposable(
                 buttonText = "Login",
                 onClick = {},
-                modifier = Modifier.align(Alignment.CenterHorizontally)
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                buttonColor = ButtonColor
             )
             Spacer(
                 modifier = Modifier.height(20.dp)
