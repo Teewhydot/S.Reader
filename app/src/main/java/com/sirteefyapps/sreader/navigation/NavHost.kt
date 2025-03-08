@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.sirteefyapps.sreader.features.splashscreen.presentation.activity.IntroScreen
 import com.sirteefyapps.sreader.features.splashscreen.presentation.activity.SReaderSplash
 import kotlinx.serialization.Serializable
 
@@ -16,11 +17,18 @@ fun SReaderNavigation(navController: NavHostController) {
         composable<SReaderScreens.SplashScreen> {
             SReaderSplash()
         }
+        composable<SReaderScreens.IntroScreen> {
+            IntroScreen()
+        }
     }
 }
 
 
 object SReaderScreens {
+
+    @Serializable
+    object  IntroScreen
+
     @Serializable
     object SplashScreen
 

@@ -47,6 +47,9 @@ android {
 }
 
 dependencies {
+    //Page view functionality
+    implementation ("com.google.accompanist:accompanist-pager:0.28.0") // For Compose 1.3 or below
+
     implementation (libs.accompanist.coil)
     // Coil
     implementation(libs.coil.compose)
