@@ -36,11 +36,11 @@ import com.sirteefyapps.sreader.ui.theme.headerTextStyle
 
 @Preview
 @Composable
-private fun PopularBooksCard() {
+ fun PopularBooksCard() {
     Surface(
         modifier = Modifier
             .height(116.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth().padding(10.dp),
         shape = RoundedCornerShape(10.dp),
         color = SplashBGTint
     ) {
