@@ -40,7 +40,7 @@ import com.sirteefyapps.sreader.ui.theme.headerTextStyle
     Surface(
         modifier = Modifier
             .height(116.dp)
-            .fillMaxWidth().padding(10.dp),
+            .fillMaxWidth().padding(bottom = 10.dp),
         shape = RoundedCornerShape(10.dp),
         color = SplashBGTint
     ) {
